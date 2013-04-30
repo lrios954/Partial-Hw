@@ -21,7 +21,7 @@ int main(){
   float intervalo_tiempo = 3.0/10.0;
   float delta_x;
   float delta_t = 0.003;
-  float alpha = delta_t/(delta_x*delta_x);
+  float alpha = delta_t;
   
   float *u_inicial;
   float *u_pasada;
