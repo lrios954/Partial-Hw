@@ -24,7 +24,6 @@ int main(){
   float alpha = delta_t/(delta_x*delta_x);
   
   float *u_inicial;
-  float *u_inicial;
   float *u_pasada;
   float *u_ahora;
   float *u_nueva;
@@ -53,7 +52,31 @@ int ind;
 for (ind = 0; j < 2; ind ++)
 	{
 
-void condicionesIniciales(float *u_inicial, int n_x, int ind, float delta_x);
+if(ind == 0){
+	int h = 0;
+	delta_x = 0.001;
+	for(h = 0; h < n_pasos; h ++){
+		x[h] = h * delta_x;
+		u_inicial[h] = 4.0 * x[h] * (1.0 - x[h]);
+		printf ("s", "Aca");
+	}
+
+  	
+  	
+}
+
+if(ind == 1){
+	int h = 0;
+	delta_x = 0.010;
+	for(h = 0; h < n_pasos; h ++){
+		x[h] = i * delta_x - 5.0;
+		u_inicial[i] = exp(-x[i]*x[i]);
+		printf ("s", "Aqui");
+
+	}
+
+  	
+  }
 
 	for (j = 0; j < n_t; j ++)
 	{
