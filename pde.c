@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "condicionesIniciales.h"
+
 
 int main(){
 
@@ -48,8 +48,9 @@ if(!u_inicial || !u_pasada || !u_ahora || !u_nueva){
     printf("Problema con memoria");
     exit(1);
   }
+
 int ind;
-for (ind = 0; j < 2; ind ++)
+for (ind = 0; ind < 2; ind ++)
 	{
 
 if(ind == 0){
@@ -58,7 +59,8 @@ if(ind == 0){
 	for(h = 0; h < n_pasos; h ++){
 		x[h] = h * delta_x;
 		u_inicial[h] = 4.0 * x[h] * (1.0 - x[h]);
-		printf ("s", "Aca");
+		printf("%s \n", "Aqui");
+		
 	}
 
   	
@@ -71,7 +73,7 @@ if(ind == 1){
 	for(h = 0; h < n_pasos; h ++){
 		x[h] = i * delta_x - 5.0;
 		u_inicial[i] = exp(-x[i]*x[i]);
-		printf ("s", "Aqui");
+		printf("%s \n","Aca");
 
 	}
 
@@ -99,7 +101,7 @@ if(ind == 1){
 			u_nueva[i] = alpha*u_ahora[i+1] + (1.0 - 2.0 * alpha)*u_ahora[i]+alpha*u_ahora[i-1];
 			u_ahora[i] = u_nueva[i];
 		}
-		printf("t = %d \n",j);
+		//printf("t = %d \n",j);
 	}
 if(ind==0)
 {
