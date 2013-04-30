@@ -1,9 +1,9 @@
 a.out: pde.c
-	@cc -lm pde.c
-	@cc ./a.out
+	@cc pde.c -lm
+	@ ./a.out
 	@python graficador.py
 	
-
+all: a.out
 
 clean: 
 	@rm -f a.out
