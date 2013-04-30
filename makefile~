@@ -1,4 +1,4 @@
-a.out: pde.c
+a.out: pde.o
 	@cc -lm pde.c
 	@cc ./a.out
 	@python graficador.py
