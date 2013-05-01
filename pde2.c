@@ -5,7 +5,7 @@
 
 int main(){
 
-double delta_x = 0.01;
+double delta_x = 0.10;
 double delta_t = 0.00003;
 double alpha = delta_t/(delta_x*delta_x);
   
@@ -41,7 +41,7 @@ if(!u_inicial || !u_pasada || !u_ahora || !u_nueva || !x || !t){
 //Se fijan las condiciones iniciales de la distribucion de calor
 for(i = 0; i < n_x; i ++){
 	
-	x[i] = i*delta_x;
+	x[i] = i*delta_x - 5.0;
 	u_inicial[i] = 4*delta_x*i*(1-delta_x*i);
 }
 
@@ -68,7 +68,8 @@ u_ahora[i] = u_nueva[i];
 for(k = 0; k < 10; k ++){
 
 	char num[20];
-	sprintf(num, "%d", k);
+	int temp = 10 + k;
+	sprintf(num, "%d", temp);
 	FILE *export;
 	export = fopen(strcat(num,".dat"), "w");
 	
